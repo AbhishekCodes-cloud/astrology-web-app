@@ -1,42 +1,112 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+
+/* 🌌 FULL SCREEN BACKGROUND */
+.app-bg {
+  width: 100vw;
+  height: 100vh;
+ background-image: url("/src/assets/images/bg_image.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: flex-end; /* 👉 push content to right */
+  align-items: center;
+}
+
+/* 👉 RIGHT SIDE PANEL */
+.right-panel {
+  width: 100%;
+  max-width: 520px; /* controls form width */
+  padding: 40px;
+  margin-right: 40px; /* space from right edge */
+
+  display: flex;
+  justify-content: center;
+}
+
+/* 💎 Glassmorphism Form */
+.form-wrapper {
+  width: 100%;
+  padding: 32px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* Title */
+.form-title {
   text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+
+/* Inputs */
+.custom-input {
+  margin-bottom: 14px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: none;
 }
 
-@keyframes logo-spin {
+/* Time inputs */
+.time-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+/* Buttons */
+.submit-btn {
+  width: 100%;
+  padding: 13px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #ffb702, #ff6ec4);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+}
+
+.back-btn {
+  flex: 1;
+  padding: 13px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  border: none;
+}
+
+.review-box {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 16px;
+  border-radius: 14px;
+  color: #fff;
+}
+
+.fade-slide {
+  animation: fadeSlide 0.6s ease;
+}
+
+@keyframes fadeSlide {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(25px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+/* 🔁 Mobile Fix */
+@media (max-width: 768px) {
+  .app-bg {
+    justify-content: center;
   }
-}
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  .right-panel {
+    margin-right: 0;
+    padding: 20px;
+  }
 }
